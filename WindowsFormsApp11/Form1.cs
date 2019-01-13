@@ -16,5 +16,34 @@ namespace WindowsFormsApp11
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnbaku_Click(object sender, EventArgs e)
+        {
+            Timer timer = new Timer();
+            timer.Tick += Timer_Tick;
+            timer.Start();          
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            timerlabel.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnlondon_Click(object sender, EventArgs e)
+        {
+            Timer timer2 = new Timer();
+            timer2.Tick += Timer2_Tick;
+            timer2.Start();
+        }
+
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            timerlabel.Text = DateTime.Now.AddHours(-4).ToLongTimeString();
+        }
     }
 }
